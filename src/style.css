@@ -2,31 +2,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-.app-wrapper {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
-}
-
-.current-weather {
-  justify-content: center;
-}
-
-.weather-description {
-  position: relative;
-  top: 50px;
-}
-.weather-metrics {
- justify-content: center;
- padding-top: 25px;
- padding-bottom: 25px;
-}
-
-.forecast {
-  justify-content: center;
-}
 h1 {
   font-size: 80px;
   line-height: 100px;
@@ -47,7 +22,40 @@ li {
   text-align: center;
 }
 
-small {
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+}
+.app-wrapper {
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.current-weather {
+  justify-content: center;
+}
+
+.weather-icon {
+  font-size: 4em;
+}
+
+.units {
+  font-size: 12px;
   position: relative;
-  top: 15px;
+  right: 60px;
+}
+
+.weather-description {
+  position: relative;
+  top: 20px;
+}
+.weather-metrics {
+ justify-content: center;
+ padding-top: 25px;
+ padding-bottom: 25px;
+}
+
+.forecast {
+  justify-content: center;
 }
