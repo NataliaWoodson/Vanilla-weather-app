@@ -1,0 +1,53 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.current-weather {
+  justify-content: center;
+}
+
+.weather-description {
+  position: relative;
+  top: 50px;
+}
+.weather-metrics {
+ justify-content: center;
+ padding-top: 25px;
+ padding-bottom: 25px;
+}
+
+.forecast {
+  justify-content: center;
+}
+h1 {
+  font-size: 80px;
+  line-height: 100px;
+  padding-top: 5px;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-align: center;
+}
+
+small {
+  position: relative;
+  top: 15px;
+}

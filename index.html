@@ -4,50 +4,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/e77df31685.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
   <title>Weather App</title>
 </head>
 <body>
   <div class="container">
+    <div class="app-wrapper">
     <ul>
       <li><h6>2:10 AM</h6></li>
       <li><h6>Tokyo</h6></li>
     </ul>
-    <div class="row">
-      <div class="col-1">
+    <div class="row current-weather">
+      <div class="col-2">
         <h1>81</h1>
       </div>
-      <div class="col-1">
+      <div class="col-2 weather-description">
         <ul>
           <li><i class="fas fa-cloud-sun"></i></li>
           <li>Clear</li>
         </ul>
       </div>
     </div>
-  <div class="row">
-    <div class="col-2">
+  <div class="row weather-metrics">
+    <div class="col">
       <ul>
         <li>Humidity</li>
         <li>79%</li>
       </ul>
     </div>
-    <div class="col-2">
+    <div class="col">
       <ul>
         <li>Wind</li>
         <li>5 MPH</li>
       </ul>
     </div>
-    <div class="col-2">
+    <div class="col">
       <ul>
         <li>Pressure</li>
         <li>1005 mb</li>
       </ul>
     </div>
+  </div>
     <div class="forecast">
       <div class="row">
-        <div class="col-2">
+        <div class="col">
           <ul>
             <li><i class="fas fa-cloud-sun"></i></li>
             <li>91</li>
@@ -55,7 +59,7 @@
             <li>Thu</li>
           </ul>
         </div>
-        <div class="col-2">
+        <div class="col">
           <ul>
             <li><i class="fas fa-cloud-sun"></i></li>
             <li>91</li>
@@ -63,7 +67,7 @@
             <li>Fri</li>
           </ul>
         </div>
-        <div class="col-2">
+        <div class="col">
           <ul>
             <li><i class="fas fa-cloud-sun"></i></li>
             <li>93</li>
@@ -71,7 +75,7 @@
             <li>Sat</li>
           </ul>
         </div>
-        <div class="col-2">
+        <div class="col">
           <ul>
             <li><i class="fas fa-cloud-sun"></i></li>
             <li>93</li>
@@ -79,7 +83,7 @@
             <li>Sun</li>
           </ul>
         </div>
-        <div class="col-2">
+        <div class="col">
           <ul>
             <li><i class="fas fa-cloud-sun"></i></li>
             <li>91</li>
@@ -88,13 +92,11 @@
           </ul>
         </div>
       </div>
-    
     </div>
-  
-     
-  
-
+    <small>
+      <a href="https://github.com/NataliaWoodson/Vanilla-weather-app" target="_blank">Open-source code</a> by Natalia Woodson
+     </small> 
   </div>
-</body>
-<script src="src/app.js"></script>
+  <script src="src/app.js"></script>
 </html>
+</body>
