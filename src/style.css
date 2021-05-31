@@ -1,5 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
+  color: #fff;
 }
 
 h1 {
@@ -17,16 +18,22 @@ h6 {
 
 ul {
   list-style-type: none;
+  line-height: 1.5;
 }
 
 li {
   text-align: center;
+}
+
+hr {
+  margin-top: 0;
 }
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
 }
 .app-wrapper {
+  background: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -47,13 +54,25 @@ li {
   bottom: 5px;
 }
 
+.text {
+  font-size: 1.5 em;
+}
+
+.high-temp {
+  font-weight: bold;
+}
+
+.low-temp {
+  opacity: .7;
+}
 .weather-description {
   position: relative;
-  top: 20px;
+  top: 25px;
 }
 
 .written-description {
-  padding-top: 5px;
+  padding-top: 10px;
+  font-size: 16px;
 }
 .weather-metrics {
  justify-content: center;
@@ -63,4 +82,8 @@ li {
 
 .forecast {
   justify-content: center;
+}
+
+.forecast-icons {
+  font-size: 1.5em;
 }
