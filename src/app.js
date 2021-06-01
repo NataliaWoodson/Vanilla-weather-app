@@ -2,6 +2,7 @@
 function formatDate(timestamp){
   let date = new Date(timestamp);
   let hours = date.getHours();
+  //show two digits in time
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -35,9 +36,21 @@ function displayTemperature (response) {
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
 }
 
-//api setup
-let apiKey = "d6e2bec016185eb7671ad91c5f507030";
-let city = "Seattle";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+//making api call for searched city
+function search (city) {
+  let apiKey = "d6e2bec016185eb7671ad91c5f507030";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+//set search value to city input
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input"); 
+  search(cityInputElement.value);
+}
+
+search("New York");
+
+let form  = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
