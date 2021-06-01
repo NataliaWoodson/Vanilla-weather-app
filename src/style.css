@@ -13,8 +13,12 @@ h1 {
 h2 {
   font-weight: 600;
   line-height: 20px;
+  display: inline;
 }
 
+p {
+  display: inline;
+}
 ul {
   list-style-type: none;
   line-height: 1.5;
@@ -32,12 +36,18 @@ small {
   color: #000;
 }
 
+#icon {
+  position: relative;
+  right: 10px;
+}
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
 }
 .app-wrapper {
-  background: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+  background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+
+
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;

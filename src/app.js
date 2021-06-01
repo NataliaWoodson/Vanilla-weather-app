@@ -18,6 +18,7 @@ function formatDate(timestamp){
 //display temp, name, weather description, humidity, wind and pressure of searched city
 function displayTemperature (response) {
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
   let temperatureElement = document.querySelector("#temperature");
   let conditionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -26,6 +27,7 @@ function displayTemperature (response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   //return description with first letter capitalized
   conditionElement.innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
