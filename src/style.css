@@ -40,14 +40,17 @@ small {
   position: relative;
   right: 10px;
 }
+
+.current-weather .active {
+  font-weight: bold;
+}
+
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
 }
 .app-wrapper {
-  background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
-
-
+  background: linear-gradient(63deg, rgb(242, 168, 168) 2.9%, rgb(94, 46, 165) 102.1%);
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -89,8 +92,8 @@ small {
 }
 .weather-metrics {
  justify-content: center;
- padding-top: 25px;
- padding-bottom: 25px;
+ padding-top: 15px;
+ padding-bottom: 15px;
 }
 
 .forecast {

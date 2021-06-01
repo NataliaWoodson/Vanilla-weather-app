@@ -26,9 +26,12 @@ function displayTemperature (response) {
   let pressureElement = document.querySelector("#pressure");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  //function is setting fahrenheit temp to global variable
+  fahrenheitTemperature = response.data.main.temp;
+
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   //return description with first letter capitalized
   conditionElement.innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -53,6 +56,36 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("New York");
+//change temp to celsius 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  //remove active class from fahrenheit link and add it to celsius link
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemperature = (fahrenheitTemperature - 32) * 5/9;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+//change temp to fahrenheit 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+//at load fahrenheit temp has no value until search is called
+let fahrenheitTemperature = null;
+
+
+
 let form  = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+search("New York");
