@@ -48,7 +48,7 @@ small {
 }
 
 .weather-icon {
-  font-size: 4em;
+  font-size: 2em;
 }
 
 .units {
@@ -76,12 +76,11 @@ small {
 }
 .weather-description {
   position: relative;
-  top: 25px;
+  top: 5px;
 }
 
 .written-description {
-  padding-top: 10px;
-  font-size: 16px;
+  font-size: 12px;
 }
 .weather-metrics {
  justify-content: center;

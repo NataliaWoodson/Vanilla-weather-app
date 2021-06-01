@@ -23,6 +23,7 @@ function displayTemperature (response) {
   let windElement = document.querySelector("#wind");
   let pressureElement = document.querySelector("#pressure");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   //return description with first letter capitalized
@@ -31,11 +32,12 @@ function displayTemperature (response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = response.data.main.pressure;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
 }
 
 //api setup
 let apiKey = "d6e2bec016185eb7671ad91c5f507030";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Chicago&appid=${apiKey}&units=imperial`;
+let city = "Seattle";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
-console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
