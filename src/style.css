@@ -47,15 +47,11 @@ small {
   justify-content: center;
 }
 
-.weather-icon {
-  font-size: 2em;
-}
-
 .units {
   font-size: 12px;
   position: relative;
-  left: 128px;
-  bottom: 5px;
+  left: 135px;
+  bottom: 30px;
 }
 
 .unit-links {
@@ -76,7 +72,6 @@ small {
 }
 .weather-description {
   position: relative;
-  top: 5px;
 }
 
 .written-description {

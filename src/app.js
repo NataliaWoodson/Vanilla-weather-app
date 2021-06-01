@@ -33,7 +33,7 @@ function displayTemperature (response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = response.data.main.pressure;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 //making api call for searched city
