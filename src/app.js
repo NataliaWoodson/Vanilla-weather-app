@@ -31,7 +31,6 @@ function displayTemperature (response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = response.data.main.pressure;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  console.log(response.data);
 }
 
 //api setup
