@@ -8,6 +8,7 @@
   <script src="https://kit.fontawesome.com/e77df31685.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="src/style.css">
   <title>Weather App</title>
 </head>
@@ -17,40 +18,40 @@
       <div class="app-wrapper">
         <ul>
           <li><h6>2:10 AM</h6></li>
-          <li><h6>Tokyo</h6></li>
+          <li><h6 id="city"></h6></li>
         </ul>
         <div class="row current-weather">
             <div class="col-3">
-              <h1>81</h1>
+              <h1 id="temperature"></h1>
             </div>
-            <div class="col-2 weather-description">
+            <div class="col-3 weather-description">
               <ul>
-                <li><i class="fas fa-cloud-sun weather-icon"></i></li>
-                <li class="written-description">Clear</li>
+                <li id="weather-icon"><i class="fas fa-cloud-sun weather-icon"></i></li>
+                <li class="written-description" id="description"></li>
               </ul>
             </div>
             <div class="row">
               <div class="col">
-              <p class="units">&deg; F | &deg; C</p>
+              <p class="units"><a href="#" class="unit-links">&deg; F</a> | <a href="#" class="unit-links">&deg; C</a></p>
               </div>
             </div>
             <div class="row weather-metrics">
               <div class="col">
                 <ul class="text">
                   <li>Humidity</li>
-                  <li>79%</li>
+                  <li><span id="humidity"></span>%</li>
                 </ul>
               </div>
               <div class="col">
                 <ul class="text">
                   <li>Wind</li>
-                  <li>5 MPH</li>
+                  <li><span id="wind"></span> MPH</li>
                 </ul>
               </div>
               <div class="col">
                 <ul class="text">
                   <li>Pressure</li>
-                  <li>1005 mb</li>
+                  <li><span id="pressure"></span>hPa</li>
                 </ul>
               </div>
             </div>
@@ -101,7 +102,10 @@
             </div>
           </div>
         </div>
-        <small><a href="https://github.com/NataliaWoodson/Vanilla-weather-app" target="_blank">Open-source code</a>by Natalia Woodson</small>
-      </div>  
+        <small><a href="https://github.com/NataliaWoodson/Vanilla-weather-app" target="_blank">Open-source code</a> by Natalia Woodson</small>
+      </div> 
+       
     </div>
-    
+    <script src="src/app.js"></script>
+  </body>
+  </html>

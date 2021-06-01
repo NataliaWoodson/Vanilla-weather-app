@@ -28,6 +28,14 @@ li {
 hr {
   margin-top: 0;
 }
+
+small {
+  color: #000;
+}
+
+#description {
+  text-transform: capitalize;
+}
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
@@ -50,10 +58,15 @@ hr {
 .units {
   font-size: 12px;
   position: relative;
-  left: 150px;
+  left: 128px;
   bottom: 5px;
 }
 
+.unit-links {
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
+}
 .text {
   font-size: 1.5 em;
 }
