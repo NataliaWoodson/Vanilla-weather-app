@@ -28,6 +28,7 @@ function displayTemperature (response) {
   let pressureElement = document.querySelector("#pressure");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
   //function is setting fahrenheit temp to global variable
   fahrenheitTemperature = response.data.main.temp;
 
@@ -88,8 +89,6 @@ function displayFahrenheitTemp(event) {
 //at load fahrenheit temp has no value until search is called
 let fahrenheitTemperature = null;
 
-
-
 let form  = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -98,7 +97,10 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+
 search("New York");
+displayForecast();
 
 let currentLocation = document.querySelector("#currentLocationButton")
 currentLocation.addEventListener ("click", getMyLocation);
@@ -107,4 +109,28 @@ currentLocation.addEventListener ("click", getMyLocation);
 function getMyLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+//display forecast for week
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML = 
+    forecastHTML + 
+    `
+    <div class="col-2">
+      <ul>
+        <li class="forecast-icons list"><i class="fas fa-cloud-sun"></i></li>
+        <li class="high-temp list">91&deg;</li>
+        <li class="low-temp list">77&deg;</li>
+        <li class="high-temp list">${day}</li>
+      </ul>
+    </div>`; 
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
 }
