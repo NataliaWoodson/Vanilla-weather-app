@@ -20,10 +20,12 @@ h2 {
 p {
   display: inline;
 }
+
 ul {
   list-style-type: none;
   line-height: 1.5;
-}
+  margin: 0 auto;
+} 
 
 /* li {
   text-align: center;
@@ -82,8 +84,9 @@ hr {
 
 .text {
   font-size: 1.5 em;
-  text-align: center;
   padding-bottom: 5px;
+  padding-left: 0px;
+  text-align: center;
 }
 
 .high-temp {
@@ -99,12 +102,24 @@ hr {
 
 .written-description {
   font-size: 12px;
+  position: relative;
+  bottom: 10px;
 }
 .weather-metrics {
- justify-content: center;
- padding-top: 20px;
+ padding-top: 50px;
+ padding-bottom: 10px;
 } 
 
 .forecast-icons {
   font-size: 1.5em;
+}
+
+.temp-info {
+  position: relative;
+  top: 15px;
+}
+
+.units-info {
+  position: relative;
+  top: 15px;
 }
