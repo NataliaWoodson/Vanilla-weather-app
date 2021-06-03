@@ -8,6 +8,7 @@ h1 {
   line-height: 100px;
   padding-top: 5px;
   margin-bottom: 0px;
+  text-align: right;
 }
 
 h2 {
@@ -24,15 +25,15 @@ ul {
   line-height: 1.5;
 }
 
-li {
+/* li {
   text-align: center;
-}
+} */
 
 hr {
   margin-top: 0;
 }
 
-small {
+#footer {
   color: #000;
 }
 
@@ -41,19 +42,28 @@ small {
   right: 10px;
 }
 
-.current-weather .active {
+#weather-list {
+  padding-left: 5px;
+}
+
+.app-wrapper .active {
   font-weight: bold;
 }
 
+.searchRow {
+  padding-top: 5px;
+  padding-left: 5px;
+}
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
 }
 .app-wrapper {
-  background: linear-gradient(63deg, rgb(242, 168, 168) 2.9%, rgb(94, 46, 165) 102.1%);
-  padding: 20px;
+  background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
+
+  /* padding: 20px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 5px; */
 }
 
 .current-weather {
@@ -61,19 +71,23 @@ small {
 }
 
 .units {
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
-  left: 135px;
-  bottom: 30px;
-}
+  top: 20px;
+  right: 5px;
+}  
 
 .unit-links {
   color: #fff;
   cursor: default;
   text-decoration: none;
+  justify-content: center;
 }
+
 .text {
   font-size: 1.5 em;
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 .high-temp {
@@ -84,7 +98,9 @@ small {
   opacity: .7;
 }
 .weather-description {
-  position: relative;
+  /* position: relative;
+  bottom: 10px; */
+  text-align: left;
 }
 
 .written-description {
@@ -92,13 +108,12 @@ small {
 }
 .weather-metrics {
  justify-content: center;
- padding-top: 15px;
- padding-bottom: 15px;
+ padding-top: 20px;
 }
 
 .forecast {
   justify-content: center;
-}
+} 
 
 .forecast-icons {
   font-size: 1.5em;

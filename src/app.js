@@ -12,7 +12,9 @@ function formatDate(timestamp){
   }
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let month = months[date.getMonth()];
+  return `Last updated: ${day}, ${hours}:${minutes}`;
 }
 
 //display temp, name, weather description, humidity, wind and pressure of searched city
