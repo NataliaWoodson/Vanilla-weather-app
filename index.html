@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <title>Weather App</title>
 </head>
 <body>
@@ -18,11 +19,14 @@
       <div class="app-wrapper">
         <form id="search-form" class="mb-5">
           <div class="row searchRow">
-            <div class="col-6">
+            <div class="col-4">
           <input type="search" placeholder="Enter city..." class=" form-control" id="city-input" autocomplete="off" autofocus="on">
             </div>
-            <div class="col-3">
-          <input type="submit" value="Search" class="btn btn-light w-100">
+            <div class="col-2">
+              <input type="submit" value="Search" class="btn btn-light">
+            </div>
+            <div class="col-2">
+              <button id="currentLocationButton" class="btn btn-light"><i class="bi bi-geo-alt"></i></button>
             </div>
           </div>
         </form> 

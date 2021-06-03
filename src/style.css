@@ -42,10 +42,6 @@ hr {
   right: 10px;
 }
 
-#weather-list {
-  padding-left: 5px;
-}
-
 .app-wrapper .active {
   font-weight: bold;
 }
@@ -98,9 +94,7 @@ hr {
   opacity: .7;
 }
 .weather-description {
-  /* position: relative;
-  bottom: 10px; */
-  text-align: left;
+  justify-content: center;
 }
 
 .written-description {
@@ -109,10 +103,6 @@ hr {
 .weather-metrics {
  justify-content: center;
  padding-top: 20px;
-}
-
-.forecast {
-  justify-content: center;
 } 
 
 .forecast-icons {
