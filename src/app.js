@@ -14,7 +14,7 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let month = months[date.getMonth()];
-  return `${day}, ${hours}:${minutes}`;
+  return `Last updated: ${day}, ${hours}:${minutes}`;
 }
 
 
@@ -57,7 +57,6 @@ function displayForecast(response) {
 
 //make call for forecast
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "d6e2bec016185eb7671ad91c5f507030";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
@@ -159,4 +158,4 @@ let currentLocation = document.querySelector("#currentLocationButton")
 currentLocation.addEventListener ("click", getMyLocation);
 
 
-search("New York");
+search("Boston");
