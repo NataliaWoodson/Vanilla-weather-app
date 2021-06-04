@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 900;
   line-height: 20px;
   display: inline;
 }
@@ -32,7 +32,8 @@ ul {
 } */
 
 hr {
-  margin-top: 0;
+  margin: 0 auto;
+  width: 80%;
 }
 
 #footer {
@@ -42,6 +43,11 @@ hr {
 #icon {
   position: relative;
   right: 10px;
+  top: 10px;
+}
+
+.btn-light{
+  background-color:#FFF;
 }
 
 .app-wrapper .active {
@@ -57,7 +63,7 @@ hr {
   margin: 30px auto;
 }
 .app-wrapper {
-  background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
+  background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
   border-radius: 5px;
   padding: 0 10px 25px 0;
 }
@@ -74,7 +80,7 @@ hr {
 }  
 
 .unit-links {
-  color: #fff;
+  color: #000;
   cursor: default;
   text-decoration: none;
   justify-content: center;
@@ -110,6 +116,7 @@ hr {
 
 .forecast {
   text-align: center;
+  padding-top: 15px;
 }
 
 .weather-forecast-temperatures {
