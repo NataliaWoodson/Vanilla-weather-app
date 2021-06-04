@@ -107,28 +107,28 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-//change temp to celsius 
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  //remove active class from fahrenheit link and add it to celsius link
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let celsiusTemperature = (fahrenheitTemperature - 32) * 5/9;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
+// //change temp to celsius 
+// function displayCelsiusTemp(event) {
+//   event.preventDefault();
+//   //remove active class from fahrenheit link and add it to celsius link
+//   fahrenheitLink.classList.remove("active");
+//   celsiusLink.classList.add("active");
+//   let celsiusTemperature = (fahrenheitTemperature - 32) * 5/9;
+//   let temperatureElement = document.querySelector("#temperature");
+//   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+// }
 
-//change temp to fahrenheit 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
+// //change temp to fahrenheit 
+// function displayFahrenheitTemp(event) {
+//   event.preventDefault();
+//   celsiusLink.classList.remove("active");
+//   fahrenheitLink.classList.add("active");
+//   let temperatureElement = document.querySelector("#temperature");
+//   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+// }
 
-//at load fahrenheit temp has no value until search is called
-let fahrenheitTemperature = null;
+// //at load fahrenheit temp has no value until search is called
+// let fahrenheitTemperature = null;
 
 //get temperature of current location
 function searchLocation(position) {
@@ -148,11 +148,11 @@ function getMyLocation(event) {
 let form  = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
+// let celsiusLink = document.querySelector("#celsius-link");
+// celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+// let fahrenheitLink = document.querySelector("#fahrenheit-link");
+// fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 
 let currentLocation = document.querySelector("#currentLocationButton")
