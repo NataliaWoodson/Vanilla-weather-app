@@ -53,14 +53,13 @@ hr {
   padding-left: 5px;
 }
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 550px;
   margin: 30px auto;
 }
 .app-wrapper {
   background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
   border-radius: 5px;
-  padding: 0 10px 15px 0;
-  
+  padding: 0 10px 25px 0;
 }
 
 .current-weather {
@@ -111,6 +110,10 @@ hr {
 
 .forecast {
   text-align: center;
+}
+
+.weather-forecast-temperatures {
+  text-align: right;
 }
 .forecast-icons {
   font-size: 1em;

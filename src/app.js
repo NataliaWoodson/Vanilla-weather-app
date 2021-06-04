@@ -42,11 +42,13 @@ function displayForecast(response) {
     `
     <div class="col">
       <ul>
-        <li class="forecast-icons list"><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"/></li>
-        <li class="high-temp list">${Math.round(forecastDay.temp.max)}&deg;</li>
-        <li class="low-temp list">${Math.round(forecastDay.temp.min)}&deg;</li>
         <li class="high-temp list">${formatDay(forecastDay.dt)}</li>
+        <li class="forecast-icons list"><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"/></li>
       </ul>
+     <div class="weather-forecast-temperatures">   
+        <span class="high-temp list">${Math.round(forecastDay.temp.max)}&deg;</span>
+        <span class="low-temp list">${Math.round(forecastDay.temp.min)}&deg;</span>
+      </div>  
     </div>`; 
   }
   });
