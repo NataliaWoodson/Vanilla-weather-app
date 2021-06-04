@@ -1,6 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: #FFF;
 }
 
 h1 {
@@ -57,11 +57,10 @@ hr {
   margin: 30px auto;
 }
 .app-wrapper {
-  background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
-
-  /* padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px; */
+  background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
+  border-radius: 5px;
+  padding: 0 10px 15px 0;
+  
 }
 
 .current-weather {
@@ -110,8 +109,11 @@ hr {
  padding-bottom: 10px;
 } 
 
+.forecast {
+  text-align: center;
+}
 .forecast-icons {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .temp-info {

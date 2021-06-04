@@ -14,7 +14,53 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let month = months[date.getMonth()];
-  return `Last updated: ${day}, ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
+}
+
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
+
+//display forecast for week
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  //loop through each forecast day
+  forecast.forEach(function (forecastDay, index) {
+  if (index < 6) {
+    forecastHTML = 
+    forecastHTML + 
+    `
+    <div class="col">
+      <ul>
+        <li class="forecast-icons list"><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"/></li>
+        <li class="high-temp list">${Math.round(forecastDay.temp.max)}&deg;</li>
+        <li class="low-temp list">${Math.round(forecastDay.temp.min)}&deg;</li>
+        <li class="high-temp list">${formatDay(forecastDay.dt)}</li>
+      </ul>
+    </div>`; 
+  }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//make call for forecast
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "d6e2bec016185eb7671ad91c5f507030";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //display temp, name, weather description, humidity, wind and pressure of searched city
@@ -43,6 +89,8 @@ function displayTemperature (response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 //making api call for searched city
@@ -57,14 +105,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input"); 
   search(cityInputElement.value);
-}
-
-//get temperature of current location
-function searchLocation(position) {
-  let apiKey = "d6e2bec016185eb7671ad91c5f507030";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`
-  console.log(apiUrl);
-  axios.get(apiUrl).then(displayTemperature);
 }
 
 //change temp to celsius 
@@ -86,8 +126,24 @@ function displayFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
 //at load fahrenheit temp has no value until search is called
 let fahrenheitTemperature = null;
+
+//get temperature of current location
+function searchLocation(position) {
+  let apiKey = "d6e2bec016185eb7671ad91c5f507030";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+
+//ask for permission to get location
+function getMyLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 let form  = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -99,38 +155,8 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 
-search("New York");
-displayForecast();
-
 let currentLocation = document.querySelector("#currentLocationButton")
 currentLocation.addEventListener ("click", getMyLocation);
 
-//ask for permission to get location
-function getMyLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
 
-//display forecast for week
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML = 
-    forecastHTML + 
-    `
-    <div class="col-2">
-      <ul>
-        <li class="forecast-icons list"><i class="fas fa-cloud-sun"></i></li>
-        <li class="high-temp list">91&deg;</li>
-        <li class="low-temp list">77&deg;</li>
-        <li class="high-temp list">${day}</li>
-      </ul>
-    </div>`; 
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
-}
+search("New York");
