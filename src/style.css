@@ -1,6 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
-  color: #FFF;
+  color: 	#E5E4E2;
 }
 
 h1 {
@@ -50,6 +50,10 @@ hr {
   background-color:#FFF;
 }
 
+.btn-light:hover {
+  background-color: 	#D3D3D3;
+  transition: background-color .5s;
+}
 .app-wrapper .active {
   font-weight: bold;
 }
@@ -59,13 +63,14 @@ hr {
   padding-left: 5px;
 }
 .weather-app-wrapper {
-  max-width: 550px;
+  max-width: 500px;
   margin: 30px auto;
 }
 .app-wrapper {
-  background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
+  background: radial-gradient(circle at 10% 20%, rgb(0, 107, 141) 0%, rgb(0, 69, 91) 90%);
   border-radius: 5px;
   padding: 0 10px 25px 0;
+  box-shadow: 10px 5px 25px gray;
 }
 
 .current-weather {
@@ -87,7 +92,7 @@ hr {
 }
 
 .text {
-  font-size: 1.5 em;
+  font-size: 1em;
   padding-bottom: 5px;
   padding-left: 0px;
   text-align: center;
@@ -100,15 +105,20 @@ hr {
 .low-temp {
   opacity: .7;
 }
-.weather-description {
+/* .weather-description {
   justify-content: center;
+} */
+
+.weather-list {
+  text-align: center;
 }
 
 .written-description {
   font-size: 12px;
   position: relative;
-  bottom: 10px;
-}
+  left: 10px;
+}  
+
 .weather-metrics {
  padding-top: 30px;
  padding-bottom: 20px;
@@ -122,6 +132,7 @@ hr {
 .weather-forecast-temperatures {
   text-align: right;
 }
+
 .forecast-icons {
   font-size: 1em;
 }
