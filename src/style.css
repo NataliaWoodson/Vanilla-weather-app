@@ -67,7 +67,7 @@ hr {
   margin: 30px auto;
 }
 .app-wrapper {
-  background: radial-gradient(circle at 10% 20%, rgb(0, 107, 141) 0%, rgb(0, 69, 91) 90%);
+  background: linear-gradient(109.6deg, rgb(0, 182, 255) 11.2%, rgb(102, 51, 153) 91.1%);
   border-radius: 5px;
   padding: 0 10px 25px 0;
   box-shadow: 10px 5px 25px gray;
