@@ -1,5 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #f8f8ff;
   color: 	#FFF;
 }
 
@@ -48,6 +49,7 @@ hr {
 
 .btn-light{
   background-color:#FFF;
+  border-radius: 100%;
 }
 
 .btn-light:hover {
@@ -75,6 +77,19 @@ hr {
 
 .current-weather {
   justify-content: center;
+}
+
+#currentLocationButton {
+  text-decoration: none;
+  position: relative;
+  top: 5px;
+  left: 10px;
+  color: #FFF;
+  font-weight: bold;
+}
+
+#currentLocationButton:hover {
+  text-decoration: underline;
 }
 
 .units {
